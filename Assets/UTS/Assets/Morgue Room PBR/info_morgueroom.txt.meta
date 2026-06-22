@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 66aa1c97914594a4384fea63e834cff2
+timeCreated: 1466825393
+licenseType: Store
+TextScriptImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 65817
+  packageName: Morgue Room PBR
+  packageVersion: 1.0
+  assetPath: Assets/Morgue Room PBR/info_morgueroom.txt
+  uploadId: 448714

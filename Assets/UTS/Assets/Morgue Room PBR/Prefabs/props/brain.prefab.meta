@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 55d3d6b222c83ca4b9d4b10fe77324a9
+timeCreated: 1466640181
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 65817
+  packageName: Morgue Room PBR
+  packageVersion: 1.0
+  assetPath: Assets/Morgue Room PBR/Prefabs/props/brain.prefab
+  uploadId: 448714

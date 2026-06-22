@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: f5e69ad4113dfb140a9f6f6f2bd5d9ac
+timeCreated: 1466639952
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 65817
+  packageName: Morgue Room PBR
+  packageVersion: 1.0
+  assetPath: Assets/Morgue Room PBR/Prefabs/props/shelf.prefab
+  uploadId: 448714

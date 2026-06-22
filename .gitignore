@@ -1,0 +1,60 @@
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+
+UserSettings/
+
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+
+.vs/
+.idea/
+
+
+
+# Visual Studio Code
+.vscode/
+
+# Windows
+desktop.ini
+
+# Unity Build
+*.apk
+
+# Unity Burst
+*_BurstDebugInformation_DoNotShip/
+
+# Unity Backup
+*_BackUpThisFolder_ButDontShipItWithYourGame/
+
+# Visual Studio
+*.sln
+*.slnx
+
+
+
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+
+UserSettings/
+
+*.apk
+*_BurstDebugInformation_DoNotShip/
+*_BackUpThisFolder_ButDontShipItWithYourGame/
+
+
+*.psd
+*.tga

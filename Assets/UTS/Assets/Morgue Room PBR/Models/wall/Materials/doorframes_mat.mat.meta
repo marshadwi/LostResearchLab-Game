@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 167c8b2bdc80e6743b1df4140f10c942
+timeCreated: 1463319070
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 65817
+  packageName: Morgue Room PBR
+  packageVersion: 1.0
+  assetPath: Assets/Morgue Room PBR/Models/wall/Materials/doorframes_mat.mat
+  uploadId: 448714

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 8b3288e50bd0b5c47978abc038fc9e91
+timeCreated: 1466634916
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 65817
+  packageName: Morgue Room PBR
+  packageVersion: 1.0
+  assetPath: Assets/Morgue Room PBR/Models/props/Materials/Organs_mat.mat
+  uploadId: 448714
