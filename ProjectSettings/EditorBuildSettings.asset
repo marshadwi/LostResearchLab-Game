@@ -12,10 +12,10 @@ EditorBuildSettings:
     path: Assets/ARCADE - FREE Racing Car/Scenes/3D Car.unity
     guid: 4452e946920f43a41b29d23eea114bc8
   - enabled: 1
-    path: Assets/UTS/Levels/MainMenu.unity
+    path: Assets/UTS/Levels/Main Menu/MainMenu.unity
     guid: a7400f9515f1a934ca5d4b8cd39c02ab
   - enabled: 1
-    path: Assets/UTS/Levels/ResearchArea.unity
+    path: Assets/UTS/Levels/Level 2/ResearchArea.unity
     guid: ba842c2c0b34aec4597f6b3eab96e77a
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
