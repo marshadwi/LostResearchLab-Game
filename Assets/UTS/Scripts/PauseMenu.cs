@@ -12,13 +12,9 @@ public class PauseMenu : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused)
-            {
                 ResumeGame();
-            }
             else
-            {
                 PauseGame();
-            }
         }
     }
 
@@ -30,7 +26,6 @@ public class PauseMenu : MonoBehaviour
         Cursor.visible = true;
 
         Time.timeScale = 0f;
-
         isPaused = true;
     }
 
@@ -42,7 +37,6 @@ public class PauseMenu : MonoBehaviour
         Cursor.visible = false;
 
         Time.timeScale = 1f;
-
         isPaused = false;
     }
 
@@ -50,12 +44,22 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
 
-        SceneManager.LoadScene(
-            SceneManager.GetActiveScene().buildIndex
-        );
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void QuitGame()
+    // QUIT KE MAIN MENU
+    public void QuitToMainMenu()
+    {
+        Time.timeScale = 1f;
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    // BENAR-BENAR KELUAR GAME
+    public void ExitGame()
     {
         Application.Quit();
 

@@ -2,18 +2,23 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Movement")]
     public CharacterController controller;
-    public float speed = 5f;
+    public float moveSpeed = 5f;
 
     void Update()
     {
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+        // Input WASD
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
 
+        // Arah gerakan mengikuti arah player
         Vector3 move =
-            transform.right * x +
-            transform.forward * z;
+            transform.right * horizontal +
+            transform.forward * vertical;
 
-        controller.Move(move * speed * Time.deltaTime);
+        // Gerakkan player
+        controller.Move(move * moveSpeed * Time.deltaTime);
     }
 }
+

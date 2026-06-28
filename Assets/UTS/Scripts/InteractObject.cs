@@ -1,85 +1,137 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InteractObject : MonoBehaviour
 {
-    public enum ObjectType
+public enum ObjectType
+{
+    OperationTable,
+    Cabinet,
+    Trolley,
+    Keycard,
+    ExitDoor,
+    Locker
+}
+
+
+public ObjectType objectType;
+
+public static bool hasKeycard = false;
+
+private bool playerNear = false;
+private bool collected = false;
+
+void Update()
+{
+    if (playerNear && Input.GetKeyDown(KeyCode.E))
     {
-        OperationTable,
-        Locker,
-        WorkDesk,
-        Cabinet,
-        Keycard,
-        ExitDoor
+        Interact();
     }
+}
 
-    public ObjectType objectType;
-
-    public static bool hasKeycard = false;
-
-    bool playerNear = false;
-
-    void Update()
+void Interact()
+{
+    switch (objectType)
     {
-        if (playerNear && Input.GetKeyDown(KeyCode.E))
-        {
-            Interact();
-        }
-    }
+        case ObjectType.OperationTable:
 
-    void Interact()
-    {
-        switch(objectType)
-        {
-            case ObjectType.OperationTable:
-                Debug.Log("Dokumen 1 ditemukan");
-                break;
+            if (!collected)
+            {
+                collected = true;
+                DocumentManager.instance.CollectDocument();
 
-            case ObjectType.Locker:
-                Debug.Log("Dokumen 2 ditemukan");
-                break;
+                Debug.Log("Dokumen ditemukan di Meja Operasi");
+            }
 
-            case ObjectType.WorkDesk:
-                Debug.Log("Dokumen 3 ditemukan");
-                break;
+            break;
 
-            case ObjectType.Cabinet:
-                Debug.Log("Cabinet dibuka");
-                break;
+        case ObjectType.Cabinet:
 
-            case ObjectType.Keycard:
+            if (!collected)
+            {
+                collected = true;
+                DocumentManager.instance.CollectDocument();
+
+                Debug.Log("Dokumen ditemukan di Cabinet");
+            }
+
+            break;
+
+        case ObjectType.Trolley:
+
+            if (!collected)
+            {
+                collected = true;
+                DocumentManager.instance.CollectDocument();
+
+                Debug.Log("Dokumen ditemukan di Trolley");
+            }
+
+            break;
+
+        case ObjectType.Keycard:
+
+            if (!hasKeycard)
+            {
                 hasKeycard = true;
+
                 Debug.Log("Keycard diperoleh");
+
                 gameObject.SetActive(false);
-                break;
+            }
 
-            case ObjectType.ExitDoor:
+            break;
 
-                if(hasKeycard)
-                {
-                    Debug.Log("Access Granted");
-                }
-                else
-                {
-                    Debug.Log("Access Denied");
-                }
+        case ObjectType.ExitDoor:
 
-                break;
-        }
-    }
+            if (hasKeycard)
+            {
+                Debug.Log("Access Granted");
 
-    void OnTriggerEnter(Collider other)
-    {
-        if(other.CompareTag("Player"))
+                SceneManager.LoadScene("Level2");
+            }
+            else
+            {
+                Debug.Log("Access Denied - Cari Keycard");
+            }
+
+            break;
+
+    case ObjectType.Locker:
+
+        Debug.Log("Locker ditekan!");
+
+        LockerDoor locker = GetComponent<LockerDoor>();
+
+        if (locker == null)
         {
-            playerNear = true;
+            Debug.Log("LockerDoor tidak ditemukan!");
         }
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        if(other.CompareTag("Player"))
+        else
         {
-            playerNear = false;
+            Debug.Log("LockerDoor ditemukan.");
+            locker.Interact();
         }
+
+        break;
+
     }
+}
+
+void OnTriggerEnter(Collider other)
+{
+    if (other.CompareTag("Player"))
+    {
+        playerNear = true;
+    }
+}
+
+void OnTriggerExit(Collider other)
+{
+    if (other.CompareTag("Player"))
+    {
+        playerNear = false;
+    }
+}
+
 }
