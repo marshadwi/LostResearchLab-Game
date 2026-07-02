@@ -23,9 +23,14 @@ private bool collected = false;
 
 void Update()
 {
-    if (playerNear && Input.GetKeyDown(KeyCode.E))
+    if (playerNear)
     {
-        Interact();
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Debug.Log("Tombol E ditekan");
+
+            Interact();
+        }
     }
 }
 
@@ -97,31 +102,17 @@ void Interact()
 
             break;
 
-    case ObjectType.Locker:
-
-        Debug.Log("Locker ditekan!");
-
-        LockerDoor locker = GetComponent<LockerDoor>();
-
-        if (locker == null)
-        {
-            Debug.Log("LockerDoor tidak ditemukan!");
-        }
-        else
-        {
-            Debug.Log("LockerDoor ditemukan.");
-            locker.Interact();
-        }
-
-        break;
-
     }
 }
 
 void OnTriggerEnter(Collider other)
 {
-    if (other.CompareTag("Player"))
+    Debug.Log("Ada yang masuk trigger");
+
+    if(other.CompareTag("Player"))
     {
+        Debug.Log("Player Masuk");
+
         playerNear = true;
     }
 }

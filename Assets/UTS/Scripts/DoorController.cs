@@ -2,25 +2,19 @@ using UnityEngine;
 
 public class DoorController : MonoBehaviour
 {
-    private bool isOpen = false;
+    public Transform door;
+    public float openAngle = 90f;
 
-    private Quaternion closedRotation;
-    private Quaternion openRotation;
-
-    void Start()
-    {
-        closedRotation = transform.localRotation;
-
-        openRotation = closedRotation * Quaternion.Euler(0, 90, 0);
-    }
+    private bool opened = false;
 
     public void OpenDoor()
     {
-        if (!isOpen)
-        {
-            transform.localRotation = openRotation;
+        if (opened) return;
 
-            isOpen = true;
-        }
+        door.localRotation = Quaternion.Euler(0, openAngle, 0);
+
+        opened = true;
+
+        Debug.Log("Door Open");
     }
 }

@@ -7,27 +7,15 @@ public class LockerDoor : MonoBehaviour
 
     private bool isOpen = false;
 
-    public void Interact()
+    public void OpenDoor()
     {
-        if (!DocumentManager.instance.AllDocumentsCollected())
-        {
-            Debug.Log("Kumpulkan 3 dokumen terlebih dahulu.");
-            return;
-        }
+        if (isOpen) return;
 
-        if (!isOpen)
-        {
-            doorPivot.localRotation =
-                Quaternion.Euler(0, openAngle, 0);
+        Debug.Log("Locker terbuka");
 
-            isOpen = true;
-        }
-        else
-        {
-            doorPivot.localRotation =
-                Quaternion.Euler(0, 0, 0);
+        doorPivot.localRotation =
+            Quaternion.Euler(0, openAngle, 0);
 
-            isOpen = false;
-        }
+        isOpen = true;
     }
 }

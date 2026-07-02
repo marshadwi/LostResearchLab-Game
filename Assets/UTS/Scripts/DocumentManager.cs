@@ -34,7 +34,23 @@ public class DocumentManager : MonoBehaviour
         if (documentCount >= totalDocuments)
         {
             objectiveText.text =
-                "Cari Keycard untuk keluar dari laboratorium";
+                "Ambil Keycard di dalam Locker";
+
+            // Membuka locker
+            LockerManager locker = FindFirstObjectByType<LockerManager>();
+
+            if (locker != null)
+            {
+                locker.OpenLocker();
+            }
+
+            // Menampilkan panel Objective Update
+            ObjectiveUI objectiveUI = FindFirstObjectByType<ObjectiveUI>();
+
+            if (objectiveUI != null)
+            {
+                objectiveUI.ShowDocumentCompletePanel();
+            }
         }
     }
 
@@ -43,4 +59,3 @@ public class DocumentManager : MonoBehaviour
         return documentCount >= totalDocuments;
     }
 }
-

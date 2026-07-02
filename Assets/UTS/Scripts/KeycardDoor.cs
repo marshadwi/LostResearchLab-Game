@@ -6,17 +6,18 @@ public class KeycardDoor : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (!other.CompareTag("Player"))
+            return;
+
+        if (Inventory.hasKeycard)
         {
-            if (Inventory.hasKeycard)
-            {
-                door.OpenDoor();
-                Debug.Log("Pintu terbuka");
-            }
-            else
-            {
-                Debug.Log("Butuh Keycard");
-            }
+            Debug.Log("Keycard ditemukan");
+
+            door.OpenDoor();
+        }
+        else
+        {
+            Debug.Log("Butuh Keycard");
         }
     }
 }
